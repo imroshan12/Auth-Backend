@@ -47,7 +47,7 @@ profileRouter.put("/", verifyToken, async (req, res) => {
         password = password ? password.trim() : foundUser.password;
 
         // Validate user data to be updated
-        if (!(username && /^[a-zA-Z]*$/.test(username))) {
+        if (!(username && /^[a-zA-Z0-9]*$/.test(username))) {
             throw Error("Invalid or empty username entered!");
         }
         if (password && password.length < 8) {

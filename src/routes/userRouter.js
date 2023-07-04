@@ -34,7 +34,7 @@ userRouter.post("/register", async (req, res) => {
         username = username.trim();
         email = email.trim();
         password = password.trim();
-        if (!/^[a-zA-Z ]*$/.test(username)) {
+        if (!/^[a-zA-Z)-9 ]*$/.test(username)) {
             throw Error("Invalid username entered!");
         } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             throw Error("Invalid email entered");

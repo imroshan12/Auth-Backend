@@ -5,7 +5,7 @@ const { TOKEN_KEY } = process.env;
 export const verifyToken = async (req, res, next) => {
     // Check if the token is present in the header
     const authHeader = req.headers["authorization"];
-    let token = '';
+    let token = authHeader;
     if (authHeader && authHeader.startsWith('Bearer ')) {
         const authToken = authHeader.substring(7); // Remove "Bearer " from the token string
         token = authToken;
